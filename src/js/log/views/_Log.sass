@@ -1,0 +1,47 @@
+@charset "UTF-8"
+
+.Log
+  h2
+    margin: 30px 0
+  .log-item-list
+    background: #fff
+    line-height: 60px
+    margin-left: 9px
+    margin-bottom: 15px
+  .log-item-list-ideal
+    border-left: 5px solid #86D73F
+  .log-item-list-tolight
+    border-left: 5px solid #31BAF9
+  .log-item-list-toheavy
+    border-left: 5px solid #FF982D
+  .log-item-list-lightheavy, .log-item-list-mediumheavy
+    border-left: 5px solid #FF6C02
+  .log-item-list-weightheavy
+    border-left: 5px solid #FF1200
+  .log-item-list li
+    &:nth-child(1), &:nth-child(3), &:nth-child(5), &:nth-child(7)
+      font-size: 20px
+    &:nth-child(2), &:nth-child(4), &:nth-child(6), &:nth-child(8)
+      font-size: 12px
+      margin-left: 50px
+    &:nth-child(1)
+      width: 4.5em
+      margin-left: 20px
+  @media screen and (max-width: 1210px)
+    .log-item-list li
+      &:nth-child(2), &:nth-child(4), &:nth-child(6), &:nth-child(8)
+        margin-left: 20px
+  @media screen and (max-width: 992px)
+    .log-item-list li
+      &:nth-child(1), &:nth-child(8)
+        display: block
+  @media screen and (max-width: 767px)
+    .log-item-list li
+      &:nth-child(1), &:nth-child(8)
+        margin-left: 10px
+      &:nth-child(2), &:nth-child(4), &:nth-child(6)
+        margin-left: 0
+      &:nth-child(2)
+        margin-left: 10px
+      &:nth-child(3), &:nth-child(5), &:nth-child(7)
+        font-size: 16px

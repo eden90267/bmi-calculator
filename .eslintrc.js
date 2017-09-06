@@ -21,6 +21,7 @@ module.exports = {
   },
   rules:{
     'class-methods-use-this': 0,
+    'import/prefer-default-export': 0,
     'no-underscore-dangle': 'off',
     'no-param-reassign': ['error', {
       props: false
@@ -29,6 +30,5 @@ module.exports = {
       allowForLoopAfterthoughts: true
     }],
     'function-paren-newline': 'off',
-    'import/no-unresolved': 'off', // for jest test
   }
 };

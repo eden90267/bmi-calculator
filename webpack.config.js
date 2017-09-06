@@ -21,7 +21,7 @@ const config = {
   context: path.join(__dirname, '/src'),
   entry: {
     app: ['./js/app.js'],
-    vendor: ['react', 'react-dom', 'react-router', 'jquery', 'bootstrap-sass/assets/javascripts/bootstrap.min', 'bootstrap-sass/assets/stylesheets/_bootstrap.scss', 'moment'],
+    vendor: ['react', 'react-dom', 'jquery', 'bootstrap-sass/assets/javascripts/bootstrap.min', 'bootstrap-sass/assets/stylesheets/_bootstrap.scss', 'moment'],
   },
   output: {
     filename: toFilename('[name]'),
@@ -142,7 +142,6 @@ const config = {
   ],
   devServer: {
     contentBase: 'dist',
-    historyApiFallback: true,
     port: 3000,
     stats: {
       chunks: false,
