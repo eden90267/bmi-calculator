@@ -10,15 +10,3 @@
 =size($w, $h)
   width: $w
   height: $h
-
-=result-evaluation($color, $content)
-  a
-    border: 5px solid $color
-    color: $color
-  img
-    background-color: $color
-  a::after
-    color: $color
-  &::after
-    content: $content
-    color: $color

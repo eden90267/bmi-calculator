@@ -22,7 +22,7 @@ ReactDOM.render(
 
 if (module.hot) {
   // hack, 讓 html 能夠自動 reload
-  // eslint-disable-next-line import/no-unresolved,global-require,import/no-webpack-loader-syntax
+  // eslint-disable-next-line import/no-unresolved,import/no-webpack-loader-syntax
   require('!!raw-loader!../index.pug');
   // css hot reload in dev mode
   window.addEventListener('message', (event) => {

@@ -17,7 +17,7 @@ $evaluations-idx: 1
       color: $primaryColor
       font-weight: normal
     input[type=number]
-      background: rgba(255, 255, 255, 0.18)
+      background: $auxiliaryColor + 30
       border: 2px solid $primaryColor
       border-radius: 10px
       color: #fff
@@ -42,16 +42,16 @@ $evaluations-idx: 1
       margin-top: 15px
       line-height: 15px
       &:hover
-        background: $primaryColor
-        box-shadow: 0 1px 6px 3px rgba(255, 195, 49, 0.64)
+        box-shadow: 0 1px 6px 3px opacify($primaryColor - 30, 0.64)
       &:active
-        background: #DEA921
+        background: $primaryColor - 30
         box-shadow: 0 0 0 0
     img
       display: none
-    a span
-      display: inline-block
-      margin-top: 50px
+    a
+      span
+        display: inline-block
+        margin-top: 50px
   @media screen and (max-width: 992px)
     .result
       a
@@ -60,8 +60,10 @@ $evaluations-idx: 1
         margin-top: 30px
         span
           margin-top: 40px
-      .result-default a span
-        margin-top: 35px !important
+      .result-default
+        a
+          span
+            margin-top: 35px !important
   @media screen and (max-width: 767px)
     .result
       a
@@ -70,8 +72,10 @@ $evaluations-idx: 1
         margin-top: 10px
         span
           margin-top: 50px
-      .result-default a span
-        margin-top: 45px !important
+      .result-default
+        a
+          span
+            margin-top: 45px !important
   .result-default
     a
       background: $auxiliaryColor
@@ -99,20 +103,25 @@ $evaluations-idx: 1
       +size(20px, 20px)
       border: 2px solid $auxiliaryColor
       cursor: pointer
+      @media screen and (max-width: 992px)
+        left: 40%
+      @media screen and (max-width: 767px)
+        left: 46%
     a
       &:hover, &:active
         background: $auxiliaryColor
         box-shadow: 0 0 0 0
-  @media screen and (max-width: 992px)
-    .result-default
-      img
-        left: 40%
-  @media screen and (max-width: 767px)
-    .result-default
-      img
-        left: 46%
 
   @each $evaluation in $evaluations
     .result-#{$evaluation}
-      +result-evaluation(nth($evaluationsColor, $evaluations-idx), nth($chiEvaluations, $evaluations-idx))
+      a
+        border: 5px solid nth($evaluationsColor, $evaluations-idx)
+        color: nth($evaluationsColor, $evaluations-idx)
+      img
+        background-color: nth($evaluationsColor, $evaluations-idx)
+      a::after
+        color: nth($evaluationsColor, $evaluations-idx)
+      &::after
+        content: nth($chiEvaluations, $evaluations-idx)
+        color: nth($evaluationsColor, $evaluations-idx)
     $evaluations-idx: $evaluations-idx + 1
