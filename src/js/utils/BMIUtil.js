@@ -17,11 +17,13 @@ const getEvaluationIdx = (bmi) => {
   return 5;
 };
 
+const computeBMI = (height, weight) => Number(weight / ((height / 100) ** 2)).toFixed(2);
+
 const getEvaluation = bmi => evaluations[getEvaluationIdx(bmi)];
 
 const getEngEvaluation = bmi => engEvaluations[getEvaluationIdx(bmi)];
 
 
 export default {
-  getEvaluation, getEngEvaluation,
+  computeBMI, getEvaluation, getEngEvaluation,
 };

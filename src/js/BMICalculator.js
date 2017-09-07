@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { view as Form } from './form/';
+import { view as Form } from './bmi/';
 import { view as Log } from './log/';
 
 const BMICalculator = () =>
@@ -12,7 +12,7 @@ const BMICalculator = () =>
       <Log/>
     </div>
     <div className="container-fluid footer text-center">
-      <img src="~BMICLogo.png"/>
+      <img src={require('BMICLogo.png')}/>
     </div>
   </div>;
 

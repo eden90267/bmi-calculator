@@ -14,23 +14,23 @@ class Log extends Component {
             <div className="row">
               <ul className="list-unstyled">
                 {
-                  this.props.logs.map((item) => {
-                      const engEvaluation = BMIUtil.getEngEvaluation(item.bmi);
-                      return (
-                        <li>
-                          <ul className={['list-inline', 'log-item-list', `log-item-list-${engEvaluation}`]}>
-                            <li>{item.evaluation}</li>
-                            <li>BMI</li>
-                            <li>{item.bmi}</li>
-                            <li>weight</li>
-                            <li>{`${item.weight}kg`}</li>
-                            <li>height</li>
-                            <li>{`${item.weight}cm`}</li>
-                            <li>{item.date}</li>
-                          </ul>
-                        </li>
-                      );
-                    },
+                  this.props.logs.map((item, idx) => {
+                    const engEvaluation = BMIUtil.getEngEvaluation(item.bmi);
+                    return (
+                      <li key={idx}>
+                        <ul className={`list-inline log-item-list log-item-list-${engEvaluation}`}>
+                          <li>{item.evaluation}</li>
+                          <li>BMI</li>
+                          <li>{item.bmi}</li>
+                          <li>weight</li>
+                          <li>{`${item.weight}kg`}</li>
+                          <li>height</li>
+                          <li>{`${item.height}cm`}</li>
+                          <li>{item.date}</li>
+                        </ul>
+                      </li>
+                    );
+                  },
                   )
                 }
               </ul>
@@ -47,7 +47,7 @@ Log.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  logs: state.logs,
+  logs: state.bmi,
 });
 
 export default connect(mapStateToProps)(Log);

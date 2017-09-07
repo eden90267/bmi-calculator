@@ -61,8 +61,6 @@ const config = {
             },
           ],
         }),
-        include: path.resolve(__dirname, 'src/css'),
-        exclude: /node_modules/,
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|ico)(\?\S*)?$/,

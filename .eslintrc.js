@@ -22,6 +22,7 @@ module.exports = {
   rules:{
     'class-methods-use-this': 0,
     'import/prefer-default-export': 0,
+    'prefer-rest-params': 0,
     'no-underscore-dangle': 'off',
     'no-param-reassign': ['error', {
       props: false

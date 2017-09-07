@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import Perf from 'react-addons-perf';
 
-import { reducer as formReducer } from './form';
+import { reducer as bmiReducer } from './bmi/index';
 import StorageUtil from './utils/StorageUtil';
 
 
@@ -10,7 +10,7 @@ const win = window;
 win.Perf = Perf;
 
 const reducer = combineReducers({
-  form: formReducer,
+  bmi: bmiReducer,
 });
 
 const middlewares = [];
@@ -24,6 +24,8 @@ const storeEnhancers = compose(
   (win && win.devToolsExtension) ? win.devToolsExtension() : f => f,
 );
 
-const preloadedState = StorageUtil.getLogs();
+const preloadedState = {
+  bmi: StorageUtil.getLogs(),
+};
 
 export default createStore(reducer, preloadedState, storeEnhancers);
