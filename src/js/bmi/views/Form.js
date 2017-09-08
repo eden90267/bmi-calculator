@@ -69,9 +69,9 @@ class Form extends Component {
           <div className="col-xs-12 col-sm-4">
             <ul className="list-unstyled form-list">
               <li><label htmlFor="height">身高 cm</label></li>
-              <li><input id="height" name="height" type="number" placeholder="請輸入身高" value={this.state.height} onChange={this.onInputChange}/></li>
+              <li><input id="height" name="height" type="number" placeholder="請輸入身高" value={this.state.height} onChange={this.onInputChange} readOnly={this.state.isResult}/></li>
               <li><label htmlFor="weight">體重 kg</label></li>
-              <li><input id="weight" name="weight" type="number" placeholder="請輸入體重" value={this.state.weight} onChange={this.onInputChange}/></li>
+              <li><input id="weight" name="weight" type="number" placeholder="請輸入體重" value={this.state.weight} onChange={this.onInputChange} readOnly={this.state.isResult}/></li>
             </ul>
           </div>
           <div className="col-xs-12 col-sm-4 text-center">
